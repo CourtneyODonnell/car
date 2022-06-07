@@ -79,4 +79,20 @@ describe("#shouldBuyCar()", function() { // 3
     const shouldBuy = shouldBuyCar(car);
     assert.isFalse(shouldBuy);
   });
+  
+  it("should return false when the car has 5 litres/100km and is under or equal to $5,000", function() {
+    const car = {
+      litresPer100km: 5,
+      price: 5000
+    };
+    const shouldBuy = shouldBuyCar(car);
+    assert.isFalse(shouldBuy);
+  });
+
+  it("should return undefined when there is no car", function() {
+    const car = {};
+    const shouldBuy = shouldBuyCar(car);
+    assert.isFalse(shouldBuy);
+  });
+
 });
